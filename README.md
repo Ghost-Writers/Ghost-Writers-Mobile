@@ -77,7 +77,7 @@ Lewis:  Front End Web setup
 ## Requirements
 
 - Node 8.1.x
-- Ionic.x
+- Ionic .x
 - Mongoose.x
 - etc
 - etc
