@@ -15,9 +15,19 @@
 
 <body onLoad="javascript:AR.logger.activateDebugMode();">
 
-    <a href="javascript: World.captureScreen()">Snapshot</a>
+  <div class="container">
+    <button onClick="World.showCreate()" style="height: 80px; width: 80px; color: teal; background-color: white; border: solid teal 1px; border-radius: 100%">Create</button>
+    <button onClick="World.captureScreen()" style="height: 80px; width: 80px; color: teal; background-color: white; border: solid teal 1px; border-radius: 100%">Capture</button>
+  </div>
+
+  <div id= "create">
+    <input id="marker" type="file" accept="image/*" capture="camera" onChange="World.picChange(event)">
+    <canvas id="capturedPhoto" width= "200px" height="200px">
+    </canvas>
+  </div>
 
     <div id="loadingMessage" class="info">Loading ...</div>
     <script src="js/3dmodelatgeolocation.js"></script>
 </body>
 </html>
+
