@@ -20,7 +20,7 @@ export class MyApp {
       statusBar.styleDefault();
 
       /** Enter your Wikitude (trial) License Key here. You can register and download your free license key here: http://www.wikitude.com/developer/licenses */      
-      WikitudePlugin._sdkKey = "yXJb1jRA+Dsca0RMYiruLoqnwLly2nMOhhobSkD1hPMF4kX1YK5x9NIB+sMCjV+NuvE2pcCDYKyOxk4R7uIqMqyK4BL4b9A91S2Chti90VoWcz1aIQWoj5gUpI9lRV9rOdyrKPazanZFPFFpDK4maRhA9UoRu/Q0fIMD9kTh3ZNTYWx0ZWRfX30W3XI3cRtt+Ek4V1bOncHD+U9OrxRVCg4COL8Nv+uWMDC5TTTcn4XKnznspguSqg1Lt1EXc4ceVmLYTIcr7BtPskFSMSK8jTPk+QoyWgfEKaJAdzZnMu0pHUGfs8WA2U1ygTea58sk3NkWSTpfLDS94GNMDpfxVT8ZH3hS6ghI2MzjAheIuEZbwtXdZikIIDUPUD59uMvUIt5DYoMbzZ7HtLIiLBagRdRQPW9j4GUQoUdK4LeC7ps7NSd21S8i3O/nWKuJNBNQcYaQFproFkCInF7qKc2jTMBrwY/EIhBLKXauN/fwaWx0/vtPKmi3emt8+m5BSgfPR3lAuwc9DhD/8Zlv/sjFrR/4pGFSfOlnFY1LU3SK0BUtuvnwibkpYKTIfoWy+QvUqYIHI0/Q6bC8eDCK7VK4+8nx3IV23q7aCB/wcDiNrfPSH2jWA+nFmE9XzlAH3ECi096KR9IW/JP+qAa/DduFiKepofO/1AYP6FANLAUPKlU=";
+      WikitudePlugin._sdkKey = "0lOJBJYh2TFKJ5pH7L2ehmTrdwDQ6ITD1IbN9HFYgNJRa6YtP2X9dm3TzVB0cFEz72VluOnIu85lLGyiA2KTPxFA0VpUKiG8ydk8VeHZDo1urhG474jwttY1AjFkosPbAb7K+29SMu8NL3Yz6N60l+DKOcIMFzQ1wjcztxmuJVhTYWx0ZWRfXyxv6FAkEHxlPFNSMNuqoXUcfj3cNpUKmVl+Pai7Pib6Px/glzMKT5rv7e/QxbqsKJ7GEYU9clPTRp/+dgt4RCpWnqbOVKR7gJ1/py8qbk4YCqxrTY4H6nOj4cHB82HTamIUkdRjf7E3yi/ptZGyERfyG7fmRu9seCgpI8V9H0YoSOQsKH1HMsnhzJcCWWAeQnI4/BbwhXYQc5xStSrgYc7zw/Bkk6TQm66XgBdm/J17R+B7U1tBTIVWrE+MnLlXccIyn/qPHyDehvX3KpTlRV7UzaGKhm/lQJy2zrTez5hEiKcy05kdpahnclqeKyqaYBu3mb/Itkr6hsya4+MtmjnAVXc5EIKX1xljzfsYzqHwPnWDQo/+aUTgJ1XIZtBKPAfdeScC3D6tMk+dJNMW7xb9RPe81RObLIrqGyuzuWTtjZhcLI2LAxTx9a+iaL/PHDBm/2FXdUaOqIdY95IRDV7uTvXcx2FJLjqftVJWPWmS5wjkF6ZJk7k=";
 
       /** Check if your device supports AR */
       WikitudePlugin.isDeviceSupported(
