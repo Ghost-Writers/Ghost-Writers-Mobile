@@ -25,7 +25,7 @@ export class ARView {
 
   ionViewDidLoad() {
     console.log('Hello ARView Page');
-    alert('AR View has loaded!!!')
+    // alert('AR View has loaded!!!')
 
   }
 
@@ -33,23 +33,23 @@ export class ARView {
     let context = this;
 
     var startupConfiguration: any = { "camera_position": "back" };
-    WikitudePlugin.isDeviceSupported(function(success){
-      alert('success res' + success)
-    }, function(err){
-      alert('err res' + err)
-    }, [''])
+    // WikitudePlugin.isDeviceSupported(function(success){
+    //   alert('success res' + success)
+    // }, function(err){
+    //   alert('err res' + err)
+    // }, [''])
     WikitudePlugin.loadARchitectWorld(
 
       function (success) {
         // context.createOverlays()
         console.log("ARchitect World loaded successfully.");
-        alert('success loaded architect world')
+        // alert('success loaded architect world')
       },
       function (fail) {
         // context.createOverlays()
         console.log("Failed to load ARchitect World!");
         alert('failure to load architect world')
-        alert(fail)
+        // alert(fail)
       },
       //          "www/assets/3_3dModels_1_3dModelOnTarget/index.html", // (1) if you have a IR (Image Recognition) World, use this
       //          ["ir"], // (1) if you have a IR (Image Recognition) World, use this

@@ -54,9 +54,6 @@ var World = {
 		}, 1, {
 				viewportWidth: 1000,
 				viewportHeight: 800,
-				translate: { x: 0.36, y: 0.5 },
-				horizontalAnchor: AR.CONST.HORIZONTAL_ANCHOR.RIGHT,
-				verticalAnchor: AR.CONST.VERTICAL_ANCHOR.TOP,
 				clickThroughEnabled: true,
 				allowDocumentLocationChanges: false,
 				onDocumentLocationChanged: function onDocumentLocationChangedFn(uri) {
@@ -78,7 +75,7 @@ var World = {
 		// 	opacity: 0.9
 		// });
 
-		var pageOne = new AR.ImageTrackable(this.tracker, "bus", {
+		var pageOne = new AR.ImageTrackable(this.tracker, "*", {
 			drawables: {
 				cam: [artList]
 			}
