@@ -2,14 +2,23 @@
 
 <head>
   <meta name='viewport' content='target-densitydpi=device-dpi, width = 1000, user-scalable = 0'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
     body {
-      /*background-color: green;*/
-    
+      background-color: transparent;
     }
+
     .parent {
       display: flex;
       background-color: transparent;
+    }
+
+    .carousel-container {
+      margin: auto;
+      height: 100%;
+      background: transparent;
     }
 
     ul {
@@ -17,7 +26,7 @@
       flex-direction: column;
       list-style-type: none;
       flex: 1;
-      height: 100%; 
+      height: 100%;
       margin: 0;
       flex-wrap: nowrap;
       padding: 0;
@@ -28,24 +37,47 @@
       flex: 1;
       /*display: flex;*/
       margin: auto;
+      display: flex;
       /*display: flex;*/
     }
 
+    .img-container {
+      /* display: flex; */
+    }
 
     img {
-      /*flex: 1;
+      /* flex: 1;
+      flex-basis: 500px; */
+      width: 1000px !important;
+      height: 800px !important;
+      /* flex: 1; 
       margin: auto;*/
-      width: 500px;
+      /* width: 500px; */
       /*flex: 1;*/
-      height: 500px;
+      /* flex: 1;  */
+      /* height: 500px;  */
+    }
+    /* .carousel-inner>.item>img,
+    .carousel-inner>.item>a>img {
+      width: 70%;
+      margin: auto;
+    }   */
+
+    .carousel-caption h3 {
+      color: lightblue;
+      font-size: 50px;
     }
   </style>
+
+
+
+
 </head>
 
 </html>
 
 <body>
-  <div class='parent'>
+  <!-- <div class='parent'>
     <ul>
       <li>
         <img src="http://static3.businessinsider.com/image/56f020c09105842b008b7af5-1200/3dasicfernandezrubin415greenpoint-street-art-yoav-litvin.jpg">
@@ -60,5 +92,66 @@
         <img src="https://s-media-cache-ak0.pinimg.com/736x/08/0b/2c/080b2c9947f0e6da1afa83d50203d60a--graffiti-artists-street-artists.jpg">
       </li>
     </ul>
+  </div> -->
+
+  <!-- start: final carousel -->
+  <div class='parent'>
+    <div class='carousel-container'>
+      <div id='gallery-carousel' class='carousel slide' data-ride='carousel'>
+        <div class='carousel-inner' role='listbox'>
+          <div class='item active img-container'>
+            <img class='d-block img-fluid' src="http://static3.businessinsider.com/image/56f020c09105842b008b7af5-1200/3dasicfernandezrubin415greenpoint-street-art-yoav-litvin.jpg">
+            <div class='carousel-caption'>
+              <h3>@user-one</h3>
+            </div>
+          </div>
+          <div class='item img-container'>
+            <img class='d-block img-fluid' src="https://lh4.ggpht.com/x0M8Wdb40RToZO6qhTiRHrWk3_uh-2t0H3P642oAwzPME7nlDV8BOD3L8YY">
+            <div class='carousel-caption'>
+              <h3>@user-two</h3>
+            </div>
+          </div>
+          <div class='item img-container'>
+            <img class='d-block img-fluid' src="http://media02.hongkiat.com/cool-street-art/street-art-norway.jpg">
+            <div class='carousel-caption'>
+              <h3>@user-three</h3>
+            </div>
+          </div>
+          <div class='item img-container'>
+            <img class='d-block img-fluid' src="https://s-media-cache-ak0.pinimg.com/736x/08/0b/2c/080b2c9947f0e6da1afa83d50203d60a--graffiti-artists-street-artists.jpg">
+            <div class='carousel-caption'>
+              <h3>@user-four</h3>
+            </div>
+          </div>
+        </div>
+        <!-- <a class='carousel-control-prev' href="#gallery-carousel" role='button' data-slide='prev'>
+          <span class='carousel-control-prev-icon'></span>
+          <span class='sr-only'>Previous</span>
+        </a>
+        <a class='carousel-control-next' role='button' data-slide='next' href="#gallery-carousel">
+          <span class='carousel-control-next-icon'></span>
+          <span class='sr-only'>Next</span>
+        </a>  -->
+
+        <a class="left carousel-control" href="#gallery-carousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+        <a class="right carousel-control" href="#gallery-carousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+      </div>
+    </div>
   </div>
+  <!-- end: final carousel -->
+
+  <!-- start of carousel test  -->
+
+  <!-- end of carousel test  -->
+  <script>
+    $('.carousel').carousel({
+      interval: 2000
+    })
+  </script>
 </body>
