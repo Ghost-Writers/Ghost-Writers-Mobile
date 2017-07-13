@@ -6,6 +6,9 @@
     <meta content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes" name="viewport">
 
     <title></title>
+    
+    <script src="https://static.filestackapi.com/v3/filestack.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script src="https://www.wikitude.com/libs/architect.js"></script>
      <script type="text/javascript" src="../ade.js"></script> 
@@ -15,6 +18,16 @@
 </head>  
 
  <body> 
+    <script type="text/javascript">
+      var client = filestack.init('AQqITGUBVQ6mumB5gvo95z');
+      client.pick();
+    </script>
     <div id="loadingMessage" class="info">HTML Drawable loading text...</div>
+    <div class="container">
+    <button onClick="World.showCreate()" style="height: 80px; width: 80px; color: teal; background-color: white; border: solid teal 1px; border-radius: 100%">Create</button>
+    <button onClick="World.captureScreen()" style="height: 80px; width: 80px; color: teal; background-color: white; border: solid teal 1px; border-radius: 100%">Capture</button>
+    <button onClick="World.openPicker()" style="height: 80px; width: 80px; color: teal; background-color: white; border: solid teal 1px; border-radius: 100%">Picker</button>
+  </div>
+   
  </body> 
  </html> 
