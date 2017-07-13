@@ -11,3 +11,11 @@
 	opacity: 0.7;
 	display: table;
 }
+
+.container{
+  display: flex;
+}
+
+#create {
+  display: none;
+}
