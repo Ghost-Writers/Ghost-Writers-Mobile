@@ -86,7 +86,7 @@ var World = {
 	openPicker: function openPicker() {
 		alert('in art')
       var client = filestack.init("AQqITGUBVQ6mumB5gvo95z");
-        client.pick({});
+        client.pick();
 	},
 
 	captureScreen: function captureScreenFn() {
