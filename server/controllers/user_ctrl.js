@@ -1,6 +1,16 @@
 var User = require('../models/user.js');
 
 module.exports = {
+
+  loginUser: function(req,res) {
+        User
+      .findOne({tagname: req.body.username, password: req.body.password})
+      .exec(function(err, user) {
+        if (err) return console.log(err)
+        res.json({user})
+      })
+  },
+
   index: function(req, res) {
     User
       .find({})
