@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+  <h2>{{password}}</h2>
+  <h2>{{username}}</h2>
+
+
+
+  <!--<ion-card-header>
+      Username
+    </ion-card-header>-->
+  <ion-item style="margin-top: 30px; margin-left: -5px">
+    <ion-label color="black" stacked>Username</ion-label>
+    <ion-input type="text" name="username" [(ngModel)]="user.username"></ion-input>
+  </ion-item>
+  <ion-item style="margin-top: 30px; margin-left: -5px">
+    <ion-label color="black" stacked>Password</ion-label>
+    <ion-input type="password" name="password" [(ngModel)]="user.password"></ion-input>
+  </ion-item>
+  <button style="margin-top: 175px" color="teal" ion-button full (click)="loginButton()">Login</button>
+  <!--Post credentials into database-->
+  <!--authenticate-->
+  <!--redirect to home-->
+  <button style="margin-top: 15px" color="grey" ion-button full (click)="redirectToSignup()">Sign Up</button>
+  <button style="margin-top: 15px" color="teal" ion-button full (click)="takePicture()">Camera Test</button>
+  <button style="margin-top: 15px" color="teal" ion-button full (click)="redirectToFilesPage()">Image Files</button>
+
+</ion-content>
