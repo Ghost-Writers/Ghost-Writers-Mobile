@@ -52,13 +52,9 @@ import { HttpModule, JsonpModule } from '@angular/http';
   providers: [
     StatusBar,
     SplashScreen,
-
     InAppBrowser,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}]
-
-
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     Camera
   ]
 })
-export class AppModule {}
+export class AppModule { }
