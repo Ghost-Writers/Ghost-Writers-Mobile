@@ -86,7 +86,7 @@ var World = {
   picChange: function picChangeFn(data) {
     var fileInput = data.target.files;
     if(fileInput.length>0) {
-      alert(fileInput[0])
+      alert(JSON.stringify(fileInput[0]))
     }
   }
   

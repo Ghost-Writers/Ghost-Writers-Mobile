@@ -199,7 +199,26 @@ var World = {
 			var e = document.getElementById('loadingMessage');
 			e.parentElement.removeChild(e);
 		}, 10000);
-	}
+	},
+
+    showCreate: function showCreateFn() {
+    var x = document.getElementById('create')
+    if (x.style.display === 'none') {
+      x.style.display = 'block';
+    } else {
+      x.style.display = 'none';
+    }
+  },
+
+  picChange: function picChangeFn(data) {
+    var fileInput = data.target.files;
+    if(fileInput.length>0) {
+      console.log('Hellloooooooo')
+      console.log("data =", data)
+      console.log(fileInput[0])
+    }
+  }
+
 };
 
 World.init();

@@ -13,7 +13,17 @@
     <link rel="stylesheet" href="css/default.css">
 </head>
 
-<body>
+<body onLoad="javascript:AR.logger.activateDebugMode();">
+
+  <div class="container">
+    <button onClick="World.showCreate()" style="height: 80px; width: 80px; color: teal; background-color: white; border: solid teal 1px; border-radius: 100%">Create</button>
+    <button onClick="World.captureScreen()" style="height: 80px; width: 80px; color: teal; background-color: white; border: solid teal 1px; border-radius: 100%">Capture</button>
+  </div>
+
+  <div id= "create">
+    <input id="marker" type="file" accept="image/*" capture="camera" onChange="World.picChange(event)">
+  </div>
+
     <div id="loadingMessage" class="info">Loading ...</div>
 
     <script src="js/htmldrawable.js"></script>
