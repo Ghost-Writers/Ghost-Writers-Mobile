@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AR } from '../../assets/ade.js';
+
 // import { ArPage } from '../assets/image-recognition/js/htmldrawable';
 /*
   Generated class for the ARView page.
@@ -17,10 +18,12 @@ export class ARView {
   loaded: Boolean;
   AR: any;
 
+
   constructor(public navCtrl: NavController) {
     this.loaded = false;
     // this.AR = window.plugins.WikitudePlugin;
     this.AR = AR;
+
   }
 
   ionViewDidLoad() {
