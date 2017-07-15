@@ -6,6 +6,7 @@ import { UserService } from '../../app/services/service';
 import { TabsPage } from '../tabs/tabs';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { FilesPage } from '../imgfiles/imgFiles'
+import { CreatePage } from '../create/createpage'
 
 @Component({
   selector: 'page-login',
@@ -30,11 +31,6 @@ export class LoginPage {
     username: null,
     password: null,
   }
-  // myFunction = function(data) {
-  //   console.log('yo')
-  //   var fileInput = data.target.files
-  //   console.log('yes')
-  // }
   ngOnInit() { this.getAllUsers() }
 
   getInput = () => {
@@ -95,6 +91,10 @@ export class LoginPage {
 
   redirectToFilesPage() {
     this.navCtrl.push(FilesPage);
+  }
+
+  redirectToCreatePage() {
+    this.navCtrl.setRoot(CreatePage);
   }
 
 }

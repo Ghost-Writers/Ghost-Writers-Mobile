@@ -11,8 +11,9 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { Camera } from '@ionic-native/camera';
-import { FilesPage } from '../pages/imgfiles/imgFiles'
 
+import { FilesPage } from '../pages/imgfiles/imgFiles';
+import { CreatePage } from '../pages/create/createpage'
 // import { ArPage } from '../assets/image-recognition/js/htmldrawable';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -29,6 +30,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
     ARView,
     LoginPage,
     SignupPage,
+    CreatePage,
     FilesPage
   ],
   imports: [
@@ -47,18 +49,15 @@ import { HttpModule, JsonpModule } from '@angular/http';
     ARView,
     LoginPage,
     SignupPage,
+    CreatePage,
     FilesPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-
     InAppBrowser,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}]
-
-
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     Camera
   ]
 })
-export class AppModule {}
+export class AppModule { }
