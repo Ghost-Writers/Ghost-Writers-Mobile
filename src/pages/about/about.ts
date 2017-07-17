@@ -29,7 +29,7 @@ export class AboutPage implements OnInit {
 
   launchSite() {
       // alert('in launch site')
-      let iabRef = this.iab.create('http://www.lewisbracey.com')
+      let iabRef = this.iab.create('https://createpage.herokuapp.com/')
       iabRef.on('loadstop', () => {
         alert('finished loading webpage')
         iabRef.executeScript({code: 'alert("in browser test")'})

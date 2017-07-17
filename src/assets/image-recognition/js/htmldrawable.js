@@ -28,7 +28,6 @@ var World = {
 			onInitialized: function () {
 				// enable UI elements to start recognition calls
 				// alert('in on initialized...');
-			
 			}
 		});
 		var tracker = new AR.ImageTracker(cloudRecognitionService, {
