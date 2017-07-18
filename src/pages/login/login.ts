@@ -5,8 +5,7 @@ import { SignupPage } from '../signup/signup';
 import { UserService } from '../../app/services/service';
 import { TabsPage } from '../tabs/tabs';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { FilesPage } from '../imgfiles/imgFiles'
-import { CreatePage } from '../create/createpage'
+import { CreatePage } from '../createpage/createpage';
 
 declare var swal:any;
 
@@ -29,10 +28,30 @@ export class LoginPage {
     this.base64Image = 'https://placehold.it/150x150'
   }
 
+  takePicture() {
+    this.camera.getPicture({
+      quality: 75,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      sourceType: this.camera.PictureSourceType.CAMERA,
+      allowEdit: true,
+      encodingType: this.camera.EncodingType.JPEG,
+      targetWidth: 300,
+      targetHeight: 300,
+      saveToPhotoAlbum: false
+    }).then(imageData => {
+      this.base64Image = "data:image/jpeg;base64," + imageData;
+      localStorage['image'] = imageData;
+      console.log(localStorage)
+    }, error => {
+      console.log("ERROR -> " + JSON.stringify(error));
+    });
+  }
+
   user = {
     username: null,
     password: null,
   }
+
   ngOnInit() { this.getAllUsers() }
 
   getInput = () => {
@@ -56,6 +75,15 @@ export class LoginPage {
       users => this.users = users,
       error => this.errorMessage = <any>error
       );
+    console.log(this.users)
+  }
+
+  testInput() {
+    console.log(this.user)
+  }
+
+  testService() {
+    console.log(this.users.users)
   }
 
   loginButton() {
@@ -81,31 +109,13 @@ export class LoginPage {
     
   }
 
-  takePicture() {
-    this.camera.getPicture({
-      quality: 75,
-      destinationType: this.camera.DestinationType.FILE_URI,
-      sourceType: this.camera.PictureSourceType.CAMERA,
-      allowEdit: true,
-      encodingType: this.camera.EncodingType.JPEG,
-      targetWidth: 300,
-      targetHeight: 300,
-      saveToPhotoAlbum: false
-    }).then(imageData => {
-      console.log('IMAGE INFORMATION', imageData)
-      this.base64Image = "data:image/jpeg;base64," + imageData;
-      localStorage['Photo_' + localStorage.length] = imageData;
-    }, error => {
-      console.log("ERROR -> " + JSON.stringify(error));
-    });
+  picChange(data) {
+    console.log(data)
   }
 
-  redirectToFilesPage() {
-    this.navCtrl.push(FilesPage);
+  redirectToTabsPage() {
+    this.navCtrl.push(TabsPage);
   }
 
-  redirectToCreatePage() {
-    this.navCtrl.setRoot(CreatePage);
-  }
 
 }
