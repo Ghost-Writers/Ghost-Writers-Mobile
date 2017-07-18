@@ -10,6 +10,7 @@ import { ARView } from '../pages/ar-view/ar-view';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { Camera } from '@ionic-native/camera';
+import { Geolocation } from '@ionic-native/geolocation';
 import { FilesPage } from '../pages/imgfiles/imgFiles'
 // import { ArPage } from '../assets/image-recognition/js/htmldrawable';
 
@@ -51,7 +52,8 @@ import { HttpModule, JsonpModule } from '@angular/http';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Camera
+    Camera,
+    Geolocation
   ]
 })
 export class AppModule {}

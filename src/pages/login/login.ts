@@ -5,7 +5,7 @@ import { SignupPage } from '../signup/signup';
 import { UserService } from '../../app/services/service';
 import { TabsPage } from '../tabs/tabs';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { FilesPage } from '../imgfiles/imgFiles'
+import { FilesPage } from '../imgfiles/imgFiles';
 
 @Component({
   selector: 'page-login',
@@ -71,7 +71,8 @@ export class LoginPage {
           this.navCtrl.push(TabsPage)
         }
       }
-      )
+    )
+    
   }
 
   takePicture() {
