@@ -86,10 +86,95 @@ var World = {
   picChange: function picChangeFn(data) {
     var fileInput = data.target.files;
     if(fileInput.length>0) {
-      alert(fileInput[0])
+      alert(JSON.stringify(fileInput[0]))
     }
   }
   
 };
+
+var headers = {
+	'Content-Type': 'application/json',
+	'X-Token': '',
+	'X-Version': ''
+}
+
+var allMarkers = [];
+var newMarker;
+
+var TC_ID = '5963b498f67e6315b7658a2a';
+var target_Id = null;
+var baseUrl = 'https://api/wikitude.com';
+var path_add_target  = '/cloudrecognition/targetcollection' + TC_ID + 'target';
+var path_get_target  = '/cloudrecognition/targetcollection' + TC_ID + 'targets' + target_Id;
+var path_generate_TC = '/cloudrecognition/targetcollection' + TC_ID + '/generation/cloudarchive';
+
+let getAllTargets = function () {
+	let path = baseUrl + path_add_target
+	$.ajax({
+		type: 'GET',
+		url: path,
+		headers: headers,
+		success: function(markers) {
+		  allMarkers = markers;
+		  alert('success getting all markers' + allMarkers);
+		},
+		error: function(err) {
+			alert('failure getting all markers');
+		}
+	})
+}
+
+let addTarget = function(targetName, photoUrl) {
+	let target = {
+		name: targetName,
+		imageUrl: photoUrl
+	}
+	let path = baseUrl + path_add_target;
+	$.ajax({
+		type: 'POST',
+		url: path,
+		data: target,
+		headers: headers,
+		success: function(marker) {
+		  newMarker = marker;
+		  target_Id = marker.id;
+		  alert('success making new marker');
+		},
+		error: function(err) {
+			alert('failure making new marker');
+		}
+	})
+}
+
+let deleteTarget = function (){
+	let path = baseUrl + path_get_target;
+	$.ajax({
+		type: 'DELETE',
+		url: path,
+		headers: headers,
+		success: function() {
+		  alert('success deleting marker');
+		},
+		error: function(err) {
+			alert('failure deleting marker');
+		}
+	})
+}
+
+let generateTargetCollection = function () {
+	let path = baseUrl + path_generate_TC;
+	$.ajax({
+		type: 'POST',
+		url: path,
+		headers: headers,
+		success: function(collection) {
+		  newMarker = marker;
+		  alert('success generating collection');
+		},
+		error: function(err) {
+			alert('failure generating collection');
+		}
+	})
+}
 
 World.init();

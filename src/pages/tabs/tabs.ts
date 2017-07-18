@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Tabs} from 'ionic-angular';
+import { Tabs } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { ARView } from '../ar-view/ar-view';
 import { AboutPage } from '../about/about';

@@ -13,7 +13,7 @@ var fetch = require('node-fetch');
 
 //authentication
 
-mongoose.connect('mongodb://localhost/create_underground_art', function(err) {
+mongoose.connect('mongodb://jayyhong:Cactus123@ds031792.mlab.com:31792/ghostwriters', function(err) {
   if (err) return console.log(err)
   console.log('connected to mongo shell');
 })
@@ -45,8 +45,8 @@ app.use(function(req, res, next){
 
 
 // route middleware
-app.use('api/users', userRoutes);
-app.use('api/art', artRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/art', artRoutes);
 
 
 app.get('/', function(req, res) {
