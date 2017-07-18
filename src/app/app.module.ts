@@ -58,7 +58,8 @@ import { HttpModule, JsonpModule } from '@angular/http';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Camera,
-    Geolocation
+    Geolocation,
+    InAppBrowser
   ]
 })
 export class AppModule { }
