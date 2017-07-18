@@ -71,7 +71,7 @@ export class SignupPage {
       () => this.navCtrl.setRoot(LoginPage)
       );
   }
-
+  
   getAllUsers() {
     this.userService.getUsers()
       .subscribe(
