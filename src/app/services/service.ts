@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { NavController } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
 
@@ -9,7 +10,16 @@ declare var swal: any;
 @Injectable()
   export class UserService{
 
-  constructor(private http:Http) {
+  users:any;
+  constructor(private http:Http, private navCtrl: NavController) {
+  }
+
+  ngOnInit(){
+    this.getUsers()
+      .subscribe(
+        users=> this.users = users
+      )
+      console.log(this.users)
   }
 
   baseUrl = 'http://localhost:8101/'

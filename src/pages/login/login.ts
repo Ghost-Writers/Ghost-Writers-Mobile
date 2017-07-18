@@ -5,7 +5,10 @@ import { SignupPage } from '../signup/signup';
 import { UserService } from '../../app/services/service';
 import { TabsPage } from '../tabs/tabs';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { FilesPage } from '../imgfiles/imgFiles';
+import { FilesPage } from '../imgfiles/imgFiles'
+import { CreatePage } from '../create/createpage'
+
+declare var swal:any;
 
 @Component({
   selector: 'page-login',
@@ -30,11 +33,6 @@ export class LoginPage {
     username: null,
     password: null,
   }
-  // myFunction = function(data) {
-  //   console.log('yo')
-  //   var fileInput = data.target.files
-  //   console.log('yes')
-  // }
   ngOnInit() { this.getAllUsers() }
 
   getInput = () => {
@@ -69,6 +67,14 @@ export class LoginPage {
         console.log(this.userPost.user)
         if (this.userPost.user !== null) {
           this.navCtrl.push(TabsPage)
+          swal({
+            title: 'Welcome',
+            text: 'Create custom underground ghost art in as little as three steps. Make a custom marker by taking a picture of any painting or unique wall. Upload your art onto the marker. View art with ghost vision.',
+            imageUrl: 'http://weburbanist.com/wp-content/uploads/2016/10/graffiti-revealed-mural-644x369.jpg',
+            imageWidth: 400,
+            imageHeight: 200,
+            animation: false
+          })
         }
       }
     )
@@ -96,6 +102,10 @@ export class LoginPage {
 
   redirectToFilesPage() {
     this.navCtrl.push(FilesPage);
+  }
+
+  redirectToCreatePage() {
+    this.navCtrl.setRoot(CreatePage);
   }
 
 }

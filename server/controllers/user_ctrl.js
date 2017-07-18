@@ -1,20 +1,25 @@
 var User = require('../models/user.js');
+var bcrypt = require('bcrypt')
 
 module.exports = {
 
-  loginUser: function(req,res) {
-        User
-      .findOne({tagname: req.body.username, password: req.body.password})
+  loginUser: function(req, res) {
+    console.log(req.body)
+    User
+      .findOne({tagname: req.body.username})
       .exec(function(err, user) {
         if (err) return console.log(err)
-        res.json({user})
+        bcrypt.compare(req.body.password, user.password)
+          .then(function(results) {
+            res.json({results})
+          })
+          .catch(err => console.log('error'))
       })
   },
 
   index: function(req, res) {
     User
       .find({})
- 
       .exec( function(err, users) {
         if (err) return console.log(err)
         res.json({ success: true, message: 'all users', users: users })
@@ -25,16 +30,23 @@ module.exports = {
       .findOne({_id: req.params.id})
       .exec(function(err, user) {
         if (err) return console.log(err)
-
       })
   },
   create: function(req, res) {
-    var newUser = new User(req.body);
-    newUser.save(function(err, user) {
-      if (!user) return res.json({success: false, message: 'user already exists'})
-      if (err) return console.log(err)
-      res.json({success: true, message: 'user created', user: user});
-    })
+    bcrypt.hash(req.body.password, 10)
+      .then(function(hash) {
+        console.log(req.body)
+        req.body.password = hash;
+        console.log('after hash', req.body)
+        var newUser = new User(req.body);
+        newUser.save(function(err, user) {
+          if (!user) return res.json({success: false, message: 'user already exists'})
+          if (err) return console.log('error', err)
+          res.json({success: true, message: 'user created', user: user});
+        })
+      })
+      .catch(err=> console.log(err));
+
   },
   show: function(req, res) {
     User

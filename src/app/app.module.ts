@@ -7,11 +7,14 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ARView } from '../pages/ar-view/ar-view';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { Camera } from '@ionic-native/camera';
 import { Geolocation } from '@ionic-native/geolocation';
-import { FilesPage } from '../pages/imgfiles/imgFiles'
+
+import { FilesPage } from '../pages/imgfiles/imgFiles';
+import { CreatePage } from '../pages/create/createpage'
 // import { ArPage } from '../assets/image-recognition/js/htmldrawable';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -28,6 +31,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
     ARView,
     LoginPage,
     SignupPage,
+    CreatePage,
     FilesPage
   ],
   imports: [
@@ -46,6 +50,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
     ARView,
     LoginPage,
     SignupPage,
+    CreatePage,
     FilesPage
   ],
   providers: [
@@ -56,4 +61,4 @@ import { HttpModule, JsonpModule } from '@angular/http';
     Geolocation
   ]
 })
-export class AppModule {}
+export class AppModule { }
