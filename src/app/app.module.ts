@@ -11,6 +11,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { Camera } from '@ionic-native/camera';
+import { Geolocation } from '@ionic-native/geolocation';
 
 import { FilesPage } from '../pages/imgfiles/imgFiles';
 import { CreatePage } from '../pages/create/createpage'
@@ -55,9 +56,10 @@ import { HttpModule, JsonpModule } from '@angular/http';
   providers: [
     StatusBar,
     SplashScreen,
-    InAppBrowser,
-    { provide: ErrorHandler, useClass: IonicErrorHandler },
-    Camera
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Camera,
+    Geolocation,
+    InAppBrowser
   ]
 })
 export class AppModule { }

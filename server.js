@@ -45,8 +45,8 @@ app.use(function(req, res, next){
 
 
 // route middleware
-app.use('api/users', userRoutes);
-app.use('api/art', artRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/art', artRoutes);
 
 
 app.get('/', function(req, res) {

@@ -77,7 +77,8 @@ export class LoginPage {
           })
         }
       }
-      )
+    )
+    
   }
 
   takePicture() {
